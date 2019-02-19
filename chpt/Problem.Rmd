@@ -1,0 +1,5 @@
+
+```{r knit, fig.cap = "Conceptual model adoptation of sustainable technology", fig.align = "center"}
+knitr::include_graphics("C:/Users/602956/Desktop/Studie/Thesis/Sociology thesis/Conceptueel model/ConceptueelModel.png", dpi = 108)
+```
+

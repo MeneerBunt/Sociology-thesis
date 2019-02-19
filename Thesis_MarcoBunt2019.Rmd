@@ -1,0 +1,86 @@
+---
+title             : "Thesis proposal: Diffusion of innovation in sustainability in a context of Dutch energy transition"
+shorttitle        : "Diffusion of innovation in sustainability"
+date              : "`r Sys.Date()`"
+
+author: 
+  - name          : "Marco Bunt"
+    affiliation   : "1,2"
+    corresponding : yes    # Define only one corresponding author
+    address       : "Stedin, Blaak 8, 3011 TA Rotterdam"
+    email         : "marco.bunt@Stedin.net"
+ 
+
+affiliation:
+  - id            : "1"
+    institution   : "Erasmus school of social and behavioural sciences"
+  - id            : "2"
+    institution   : "Stedin netbeheer"
+
+
+authornote: |
+  This article is the graduation thesis om Marco Bunt for the study social science on the Erasmus school of social and behavioral sciences, in collaboration with Stedin.
+abstract: |
+  Yet to be written
+  
+keywords          : "keywords"
+wordcount         : "X"
+
+bibliography      : ["r-references.bib"]
+
+class: doc,11pt, twoside
+lang: english
+figsintext: yes
+lineno: no
+footnotelist: no
+figurelist: no
+floatsintext      : yes
+
+documentclass     : "apa6"
+classoption       : "man"
+output            : papaja::apa6_pdf
+---
+
+```{r setup, include = FALSE}
+library("papaja")
+library("DiagrammeR")
+```
+
+```{r analysis-preferences}
+# Seed for random number generation
+set.seed(42)
+knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
+```
+
+
+#Introduction
+```{r child = './chpt/Introduction.Rmd'}
+```
+
+#Problem statement 
+```{r child = './chpt/Problem.Rmd'}
+```
+
+#Theoretical framework
+```{r child = './chpt/Theoretical_framework.Rmd'}
+```
+
+#Methods and data
+```{r child = './chpt/Methods.Rmd'}
+```
+
+
+\newpage
+
+# References
+```{r create_r-references}
+r_refs(file = "r-references.bib")
+
+```
+
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+<div id = "refs"></div>
+\endgroup
