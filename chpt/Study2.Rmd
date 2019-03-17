@@ -1,0 +1,15 @@
+# Study 2:  Understanding non-adaptors \label{Study2}
+Although @rogers_1983 defines lagers of innovation typically as low educated and reluctant to change, he also argues that this group can have real reasons for not adopting. This part of the article investigates the arguments this from the lagers identified (and localized) in \hyperref[Study1]{part 1} of this study by interviewing people from this group. In this part of the study, people that are identified as having the resources to adopt ECO-innovation, but are however not adopting the innovation, are selected for interviewing participants about their views on the future energy system and the role of ECO-innovation in that view. These interviews are analyses to find emerged patterns in the normative frameworks from this group.  
+
+## Method
+
+### Participants
+_Description of the participants based on the knowledge from part one of this article. Dit kan nog niet helemaal worden geschreven omdat deel 1 eerst geaadn moet worden._ 
+
+### Procedure
+From the social groups that are identified as not adopting ECO-innovation, qualitative research will be conducted in the form of semi-structured interviews. Selecting participants consist of two parts. The first part of the selecting process is selecting the locations for sampling. This part is done by purposeful sampling [add source], where we sought areas with specific characteristics that are defined in the first part of this study. By doing so, we hoped to find representative participants to investigate differed variables like income, social influence and ownership of a house. The second part is selecting the participants within the selected area. In this part the participants were selected via a non-probability convenience sampling [@creswell_poth_2018]. This procedure is chosen because it is the (relative) most easy way to enter the field and we did not see any reason to further complicate the selection process. Researchers went to the selected area, “randomly”^[Not sure how to write this] selected houses to ring doorbells and asked people for participation.  
+
+
+The interviews were semi-structured. The interviews had two main focus points: the participants view on their attributes towards ECO-innovation [@rogers_1983], and how they perceive the future of the climate. By asking about how they view the relative advantage of the technique, the compatibility with the system that they have at the moment, how they view the complexity of the systems and it they know other people who have the technology [@rogers_1983]. To investigate the views in the future climate, the interview focused on the way the participants view the stability of the eco-system and how the view change on a global scale [@levy_spicer_2013].
+
+## Results and Discussion

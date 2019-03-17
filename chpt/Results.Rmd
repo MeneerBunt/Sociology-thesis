@@ -1,0 +1,51 @@
+# Methods and data
+# results
+
+## Thresholds and beneﬁts
+
+
+## Diffution of solar
+
+
+
+
+```{r RegTab, results = 'asis', fig.align = "center", out.width = "\\textwidth",echo=F, warning=FALSE}
+
+Natural <- data.frame(
+  Variable  = c("InstalledPV",  "HousePrice", "SizeHouse", " ConstructYear", "SizeRooftop"),
+  Model_1 = "x",
+  Model_2 = " ",
+  Model_3 = "x")
+end1 <- nrow(Natural)
+
+Imaginaries <- data.frame(
+  Variable  = c("VerkiezingUitslag"),
+  Model_1 = " ",
+  Model_2 = "x",
+  Model_3 = "x")
+s2 <- end1 +1
+end2 <- nrow(Imaginaries) +end1
+
+Context <- data.frame(
+  Variable  = c("Ownership", "DistrHeat", "ResidentMobility","Income"),
+  Model_1 = "x",
+  Model_2 = "x",
+  Model_3 = "x")
+
+s3 <- end2 + 1
+
+
+i <-  bind_rows(Natural, Imaginaries, Context)
+end3 <- nrow(i)
+
+kable(
+i,
+ "latex", 
+caption = "parameters regression analysis", booktabs = T) %>% kable_styling() %>% 
+group_rows("Natural resources", 1, end1) %>% 
+group_rows("Imaginaries ", s2, end2) %>% 
+group_rows("contextual parameters", s3, end3)
+
+```
+
+en weer klaar

@@ -1,6 +1,6 @@
 ---
-title             : "Future imaginaries of non-users of ECO-innovations: identification and perceptions of residential households not adopting solar energy"
-shorttitle        : "Future imaginaries of non-users of solar energy"
+title             : "Thesis proposal: Diffusion of innovation in sustainability in a context of Dutch energy transition"
+shorttitle        : "Diffusion of innovation in sustainability"
 date              : "`r Sys.Date()`"
 
 author: 
@@ -23,32 +23,28 @@ authornote: |
 abstract: |
   Yet to be written
   
-keywords          : "future imaginaries, Sustainability, ECO-innovation,  diffusion of innovation,non-adopters"
-wordcount         : "2900"
+keywords          : "Sustainability, Co-creation,  diffusion of innovation, non-adopters"
+wordcount         : "X"
 
 bibliography      : ["r-references.bib"]
 
-#class: doc,11pt#, twoside
+class: doc,11pt, twoside
+lang: english
+figsintext: yes
+lineno: no
+footnotelist: no
+figurelist: no
 floatsintext      : yes
-figurelist        : yes
-tablelist         : yes
-footnotelist      : no
-linenumbers       : no
-linkcolor         : "blue"
-mask              : no
-draft             : no
 
 documentclass     : "apa6"
 classoption       : "man"
-output            : papaja::apa6_pdf # Use papaja::apa6_docx for Word documents #apa6_pdf
+output            : papaja::apa6_pdf
 ---
 
 ```{r setup, include = FALSE}
 source('./funct/Basics.R')
-ipak(c("papaja", "remedy", "kableExtra", "dplyr"))
+ipak(c("papaja", "DiagrammeR", "remedy", "kableExtra", "dplyr"))
 ```
-
-
 
 ```{r analysis-preferences}
 # Seed for random number generation
@@ -56,28 +52,11 @@ set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 ```
 
-```{r}
-as_id("https://docs.google.com/document/d/1yEnoqe3sI-wSxGTyScYKR_w4worqAN787kqP4H0-Kh8/edit")
-```
-
-```{r child = './chpt/Introduction.Rmd'}
-```
-
-```{r child = './chpt/Problem.Rmd'}
-```
-
-```{r child = './chpt/Theoretical_framework.Rmd'}
-```
-
 
 ```{r child = './chpt/Study1.Rmd'}
 ```
 
-```{r child = './chpt/Study2.Rmd'}
-```
 
-```{r child = './chpt/Concl.Rmd'}
-```
 
 \newpage
 

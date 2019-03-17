@@ -1,0 +1,37 @@
+# Study 1: identify non-adapters \label{Study1}
+The first part of this study is about the identification (and localization) of people that are not adopting ECO-innovation.  This part  of the study is mainly conducted as a preparation for the \hyperref[Study2]{second part} of this article.
+
+## Method
+
+### Data 
+@stedin provided the data for the geographic location of PV. This dataset contains 100.000+ locations with PV. @BAG is used for information about the houses in the area. @rotterdam_in_cijfers contains data about the city Rotterdam and used as a source for the following data: residential mobility, election results, annual income. The data about Rotterdam limits the scope of (some parts of) this study to the Rotterdam area^[I'm not sure of the whole scope of the project is about Rottedam, or anly for the parts where we do not have all the data. Specific data about residential mobility is only availeble for Rotterdam]. 
+
+### Thresholds 
+Because this study views natural resources as enablers for innovation (not as motivators), the household  income is in this study used as an interval variable. To transform the interval variable to interval variable, this article uses the Dutch tax scales (belastingschalen) [@belastingdienst_2019].
+
+### Procedure
+Insight in the variables predicting (non-)adoption is obtained via a multivariable regression analysis. The data is divided in separate groups: 1) "Natural variables", containing the natural part of the Co-production as described by @jasanoff_2004^[Not sure is I can already investigate the imaginative part of Co-production in this part of the study. It would be nice if I could find data on a normative/imaginary part of this study, so I can identify social groups in a better way, but I cannot think of any data . Only maybe the data about results from voting. By doing k-fold cross validation it's possible to learn from the data itself if there are political parties that correlate with a high PV-adoption. Than it would be able to predict, controlled for the other variables, the adoption rate per party.], and "contextual" parameters such as household income.
+
+## Results and Discussion
+```{r RegTab, results = 'asis', fig.align = "center", out.width = "\\textwidth",echo=F, warning=FALSE}
+
+param <- c("InstalledPV",  "HousePrice", "SizeHouse", " ConstructYear", "SizeRooftop")
+Natural <- data.frame(
+  Variable  = param,
+  Rotterdam = "x",
+  Netherlands = "x")
+
+param <- c("ResidentMobility","Ownership", "DistrHeat", "Income", "ElectionResults")
+Context <- data.frame(
+  Variable  = param,
+  Rotterdam = c(rep("x", length(param))),
+  Netherlands = c(" ", rep("x", length(param)-1)))
+
+i <-  bind_rows(Natural, Context)
+
+kableExtra::kable( i, "latex", caption = "parameters regression analysis", booktabs = T) %>% 
+  kableExtra::kable_styling(full_width = F, font_size = 9) %>%
+    kableExtra::group_rows(group_label = "Natural resources", 1, nrow(Natural)) %>%  
+    kableExtra::group_rows("Contextual parameters ", (nrow(Natural)+1), nrow(i))
+
+```
