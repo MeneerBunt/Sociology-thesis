@@ -1,5 +1,5 @@
 # Study 1: identify non-adapters \label{Study1}
-The first part of this study is about the identification (and localization) of people that are not adopting ECO-innovation.  This part  of the study is mainly conducted as a preparation for the \hyperref[Study2]{second part} of this article.
+The first part of this study is about the identification (and localization) of people that are not adopting ECO-innovation. This part of the study is conducted as a preparation for the \hyperref[Study2]{second part} of this article.
 
 ## Method
 

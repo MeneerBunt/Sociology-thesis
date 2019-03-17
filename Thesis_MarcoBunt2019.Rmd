@@ -1,6 +1,6 @@
 ---
-title             : "Future imaginaries of non-users of ECO-innovations: identification and perceptions of residential households not adopting solar energy"
-shorttitle        : "Future imaginaries of non-users of solar energy"
+title             : "Sociotechnical energy imaginaries of non-users of ECO-innovations: identification and perceptions of residential households not adopting solar energy"
+shorttitle        : "Sociotechnical energy imaginaries of non-users"
 date              : "`r Sys.Date()`"
 
 author: 
@@ -48,16 +48,10 @@ source('./funct/Basics.R')
 ipak(c("papaja", "remedy", "kableExtra", "dplyr"))
 ```
 
-
-
 ```{r analysis-preferences}
 # Seed for random number generation
 set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
-```
-
-```{r}
-as_id("https://docs.google.com/document/d/1yEnoqe3sI-wSxGTyScYKR_w4worqAN787kqP4H0-Kh8/edit")
 ```
 
 ```{r child = './chpt/Introduction.Rmd'}
@@ -68,7 +62,6 @@ as_id("https://docs.google.com/document/d/1yEnoqe3sI-wSxGTyScYKR_w4worqAN787kqP4
 
 ```{r child = './chpt/Theoretical_framework.Rmd'}
 ```
-
 
 ```{r child = './chpt/Study1.Rmd'}
 ```
