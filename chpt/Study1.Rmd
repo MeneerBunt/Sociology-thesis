@@ -1,37 +1,50 @@
-# Study 1: identify non-adapters \label{Study1}
-The first part of this study is about the identification (and localization) of people that are not adopting ECO-innovation. This part of the study is conducted as a preparation for the \hyperref[Study2]{second part} of this article.
+# Part 1: Identification non-adopters \label{Study1}
+The first part of this mixed- method study is a quantitative study about the identification (and localization) of households that are not adopting ECO-innovation. This part of the study is conducted as a preparation for the \hyperref[Study2]{second part} of this article.
 
 ## Method
+The statistical analysis for PV is performed on the Stedin supply area, consisting of over 2 million connections, with 100.000+ houses with PV. The data from the connections in enriched with other data (as described in the data section below), and analyzed using logistic regression. 
 
 ### Data 
-@stedin provided the data for the geographic location of PV. This dataset contains 100.000+ locations with PV. @BAG is used for information about the houses in the area. @rotterdam_in_cijfers contains data about the city Rotterdam and used as a source for the following data: residential mobility, election results, annual income. The data about Rotterdam limits the scope of (some parts of) this study to the Rotterdam area^[I'm not sure of the whole scope of the project is about Rottedam, or anly for the parts where we do not have all the data. Specific data about residential mobility is only availeble for Rotterdam]. 
-
-### Thresholds 
-Because this study views natural resources as enablers for innovation (not as motivators), the household  income is in this study used as an interval variable. To transform the interval variable to interval variable, this article uses the Dutch tax scales (belastingschalen) [@belastingdienst_2019].
-
-### Procedure
-Insight in the variables predicting (non-)adoption is obtained via a multivariable regression analysis. The data is divided in separate groups: 1) "Natural variables", containing the natural part of the Co-production as described by @jasanoff_2004^[Not sure is I can already investigate the imaginative part of Co-production in this part of the study. It would be nice if I could find data on a normative/imaginary part of this study, so I can identify social groups in a better way, but I cannot think of any data . Only maybe the data about results from voting. By doing k-fold cross validation it's possible to learn from the data itself if there are political parties that correlate with a high PV-adoption. Than it would be able to predict, controlled for the other variables, the adoption rate per party.], and "contextual" parameters such as household income.
-
-## Results and Discussion
-```{r RegTab, results = 'asis', fig.align = "center", out.width = "\\textwidth",echo=F, warning=FALSE}
-
-param <- c("InstalledPV",  "HousePrice", "SizeHouse", " ConstructYear", "SizeRooftop")
-Natural <- data.frame(
-  Variable  = param,
-  Rotterdam = "x",
-  Netherlands = "x")
-
-param <- c("ResidentMobility","Ownership", "DistrHeat", "Income", "ElectionResults")
-Context <- data.frame(
-  Variable  = param,
-  Rotterdam = c(rep("x", length(param))),
-  Netherlands = c(" ", rep("x", length(param)-1)))
-
-i <-  bind_rows(Natural, Context)
-
-kableExtra::kable( i, "latex", caption = "parameters regression analysis", booktabs = T) %>% 
-  kableExtra::kable_styling(full_width = F, font_size = 9) %>%
-    kableExtra::group_rows(group_label = "Natural resources", 1, nrow(Natural)) %>%  
-    kableExtra::group_rows("Contextual parameters ", (nrow(Natural)+1), nrow(i))
+```{r Control, fig.cap = "Variables for regression analysis", fig.align = "center", out.width = '100%'}
+knitr::include_graphics("C:/Users/602956/Desktop/Studie/Thesis/Sociology thesis/fig/Var_1.png", dpi = 108)
+```
+Stedin Netbeheer provided datapoints of households that have installed PV. To the data, other variables are added. Demographic variables, e.g., average age or single-person households, are added via data from Centraal bureau Statistiek [@CBS_2018]. This dataset provides data on the neighborhood level and is spatially joined to the data points. Also used is Basisregistratie Personen [@koninkrijksrelaties_2019] for measuring residential mobility. This data is on the level of the municipality. Via this data, the effect of people living in an area for a short period is on the adoption of PV is measured. The expectation is that, if people stay living in a house for a shorter time, the chance that they will invest in the hose will be lower. Basisregistratie Adressen en Gebouwen [@BAG] is used for extra information on the house, e.g., construction year. The expectation is that it will be more difficult to install PV on relatively old houses, and thereby, people who live in a relatively old house are less likely to adopt PV. To measure the social position of households,  data about social economic status is also joined.  To measure the effect of social influence (peer-influence) of neighbors adopting PV, a network representation of neighbors in the Stedin energy network was created using Delaunay triangulation [@Chew_1989]. By doing so, the distance in the network is conceptualized as the numbers of neighbors that need to be passed while traveling from one point to another. Looking at the data this way is a way of saying: three houses next to us they have solar panels. This way, the effect of PV in the neighborhood can be measured. From a household, it is possible to trace the shortest path to the nearest PV panel^[a time dependency is added to this for the houses that already have PV, to be able to measure the distance to a neighbor with PV at the time the PV was constructed at the house.]. To determine the maximum radius for the search,  the correlation between neighbors adopted PV was calculated using Moran's [@Moran_i_2007]. The mean difference between spatial points is displayed in figure \@ref(fig:Moran). After 150 meters, there is no (positive) correlation. Therefore the influence that visibility of PV has on neighbors is assumed to be 150 max meter.  The radius for the search for the nearest neighbor that has PV is thereby restricted to 150 meters. This study focused on the individual adoption of a household to PV. Houses that installed PV at the construction year are not considered. Also, recently installed PV's (< 3 years) are not considered in the computation for the peer effect since for this panels there has not been time for persuasion via communication channels for this PV [@rogers_1983]. \hyperref[DATA_APP]{Appendix I} provides a list of all the sources for the data used in this study.
+```{r Moran, fig.cap = "Moran's I for spatial correlation, to measure social influence of PV in the neighborhood ", fig.align = "center", out.width = '75%'}
+knitr::include_graphics("C:/Users/602956/Desktop/Studie/Thesis/Sociology thesis/fig/Autocorrelatie.png", dpi = 108)
+```
+Predicting adoption of PV via the data about the income can be misleading. Income seems to have a positive effect on the adoption of PV. However, when the income levels are clustered into two separate groups via k-mean clustering, the effect changes (Simpson's paradox, [@simpson_1951]). The income has only a positive effect on households that have a collective income lower than $\approx$ 135K. If the income is higher than that level, income seems to have a negative effect on the change of a household adopting PV. For this reason, two extra variables are added to the data: "income high," a variable for income levels > 135K, and "income low," for income levels =< 135K. The construction year of the house has, without clustering, a positive effect on the adoption of PV. After the data is clustered via k-means clustering in three groups, this effect becomes less visible. The figures are shown in figure \@ref(fig:Dummy).
+```{r Dummy, fig.cap = "Clustering of variables for collective income of a household and construction year of the houses", fig.align = "center", out.width = '100%'}
+knitr::include_graphics("C:/Users/602956/Desktop/Studie/Thesis/Sociology thesis/fig/Dummy.png", dpi = 108)
 
 ```
+```{r multicollinearity, fig.cap = "Check fror multicollinearity", fig.align = "center", out.width = '100%', results = "asis"}
+t <- read.table("C:/Users/602956/Desktop/Studie/Thesis/PV_GLM/Data/Desctipt.txt", sep = ";") %>%
+  tidyr::replace_na(list(" ")) 
+
+t$PV <- NULL
+t %>%
+  kable(digits = 2, "latex", booktabs = T,
+        caption = "Check for multicollinearity") %>%
+  kable_styling(latex_options = "scale_down") %>% 
+  row_spec(0, angle = 65)
+```
+### Procedure. 
+Insight in the variables predicting (non-)adoption of ECO-innovation is obtained via multivariable regression analysis. The data is divided into different models. Model A are variables for measuring the resources of the household. Model b measures demographic characteristics, and Model C measures the peer-influence in adopting PV. 
+
+## Validity and reliability  
+The validity and reliability of this part of the research are ensured in various ways. Firstly, the method for building the network is derived from techniques to perform regression analysis on online networks. By copying the technical aspects of the data research, the change of mistakes are minimized, and thereby, the validity of output is assured. To further improve the validity of the qualitative part of the research is guaranteed by a critical process of peer-review from employees from Stedin. The code is written in a clear and structured way, so it is accessible to peer-review by data-scientists from Stedin. The code is tested on subsets of the data to ensure the reliability of the code. For subsets of the data, the output of the computation was similar to the results of the complete dataset. The internal validity is guaranteed by, e.g., checking the data for multicollinearity. The percentage of the population with an age between 15 and 44-year are removed due to high correlation. The core for Social Economic Status (SES) is removed due to a high correlation with the data about the house price (WOZ). The available data for SES is on town-level. The data from WOZ is more accurate and therefore selected to use in the model. 
+
+## Results.
+```{r regressie, fig.cap = "Result lm", fig.align = "center", out.width = '100%', results = "asis"}
+t <- read.table("C:/Users/602956/Desktop/Studie/Thesis/PV_GLM/Data/Regressie.txt", sep = ";")
+
+t %>%
+  kable(digits = 2, "latex", booktabs = T,
+        caption = "Result lm") %>%
+  kable_styling(latex_options = "scale_down") %>%
+  add_footnote("Note:    .p<0.1; *p<0.05; **p<0.05; ***p<0.005")
+```
+The regression in Model A explains a significant part of the adoption of PV. This model shows that a household needs specific resources to enable adoption. PV is adopted more by people in owner-occupied, and less by people in apartments. From the demographic characteristics in Model B, higher residential mobility(p_verhuis) correlates with a lower chance of adopting PV.  In figure \@ref(fig:Control) the effect is the opposite, but after controling for other variables in the regression, residential mobility has the expected effect on the adoption of PV. Areas where people are moving more, the chance that they adopt PV is lower. In Model C, the presence of PV correlates with higher adoption of PV. If the distance from a house to a house with PV increases, the chance that that house adopts PV decreases. Distance is measured as the distance in the network, as the number of steps in the network from one point to another point, as described in the data section of this chapter. This effect indicates a peer-influence in the adoption of PV. 
+
+## Discussion
+The results of this part of the thesis make it possible to select areas where people can adopt PV, to conduct interviews in the second part of this thesis. Peer influence is, as theorized by @salazar_2012, an effective way to explain a significant part of the diffusion of PV. The same effect was also measured by @Bernards_2018 and @bollinger_gillingham_2012. This study verifies this finding. The closer a house is to another house, the higher the possibility of that house adopting PV. New to the existing literature is the way peer-influence is measured and shows to be a useful model for regression. Research of @vasseur_kemp_2015 shows that savings on the electricity bill is a motivator for the adoption of PV. The regression in this thesis verifies this until income surpasses 135K. After this, there seems to be a negative correlation between adoption and income. Because the data is on CBS neighborhood level, and there are relatively few data points that surpass the 135K boundary, this effect needs to be further investigated in other research. Nonetheless, the general role of income strengthens the expectation as formulated in the introduction of this thesis that resources act as enablers to adopting new technology, but are also affected by other (less measurable) elements. These elements are investigated in part two of this thesis. 

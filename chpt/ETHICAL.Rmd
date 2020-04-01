@@ -1,0 +1,44 @@
+# Informed Consent Form 
+
+Checklist for concent
+
+I. 	You must provide all respondents with: 
+
+1. The identity and contact details of the researcher (the student, i.e. the data controller’s representative), making clear your affiliation with the Department and EUR (the data controller);
+
+2. The contact details of the EUR data protection officer (privacy@eur.nl); 
+
+3. The purposes of the processing data, i.e. an explanation of the research project and why the research is being conducted (the legitimate interests pursued by the controller); 
+
+4. The legal basis for processing data, i.e. the respondent’s unambiguous consent; 
+
+5. Who will have access to the data (e.g. the student, the supervisor, any third parties or data processors) 
+
+6. How long you will keep the data (or at least the criteria used to determine the length of data storage); 
+
+7. Notification of the data subjects’ rights, including the right to: 
+a) access to their data; 
+b) rectify, erase or restrict the processing of their personal data; 
+c) withdraw consent at any time; 
+d) lodge a complaint with a supervisory authority. 
+
+II.	If you are collecting special categories of data, you must have explicit consent from the respondent to collect these data. For example: “You consent to me asking about and processing your data related to  your [list special categories of data]”. Special categories of data include:
+  
+1. Racial or ethnic origin 
+
+2. Political opinions 
+
+3. Religious or philosophical beliefs 
+4. Trade union membership 
+5. Genetic data 
+6. Biometric data for the purpose of uniquely identifying a natural person 
+7. Data concerning health 
+8. Data concerning a natural person’s sex life or sexual orientation 
+
+III.	All information provided to the respondent must be: 
+1. Concise 
+2. Transparent 
+3. Presented clearly, using plain language (no scientific jargon!) 
+4. Intelligible and easily accessible (Article 12 GDPR) 
+
+Please include a copy of your informed consent document attached to your Ethics and Privacy Checklist.

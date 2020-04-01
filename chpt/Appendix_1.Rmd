@@ -1,0 +1,71 @@
+# Appendix I: Regression variables \label{DATA_APP}
+**Bjr_h: ** this is a variable for the construction year of the house [@CBS_2018]
+
+**P_verhuis:** this measures the relocation movements from the municipality register [@koninkrijksrelaties_2019]. A higher number means that more people are moving in and out of the city.
+
+**g_woz:** Average property value [x 1,000 euros] The average property value of residential objects based on the Property Valuation Act (WOZ value). For the determination of the average home value, use is only made of those WOZ objects described as dwellings serving as the main residence (WOZ object code 10) and homes with practice space (WOZ object code 11) with a value greater than zero euros. [@CBS_2018]
+
+**p_huurw:** Rental properties in total [%] Reference date: January 1 of the relevant year. The number is stated as a percentage of the total number of homes and is stated for 20 homes or more per neighborhood and when the share of homes with unknown ownership was 50 percent or less. [@CBS_2018]
+
+**Age category** [@CBS_2018]
+
+a_00_14: 0 to 15 years [number] Number of inhabitants who are 0 to 15 years old on 1 January.
+
+a_15_24: 15 to 25 years [number] Number of inhabitants who are 15 to 25 years old on 1 January.
+
+a_25_44: 25 to 45 years [number] Number of inhabitants who are 25 to 45 years old on 1 January.
+
+a_45_64: 45 to 65 years [number] Number of inhabitants who are 45 to 65 years old on 1 January.
+
+a_65_oo: 65 years or older [number] Number of residents who are 65 or older on 1 January.
+
+**Marital status [@CBS_2018]**
+
+a_ongeh: Unmarried [number] The number of inhabitants who are unmarried on 1 January. The marital status unmarried indicates that a person has never married or entered into a registered partnership.
+a_gehuwd: Married [number] The number of inhabitants who were married on 1 January. The marital status married arises after marriage or entering into a registered partnership. Married persons also include persons who are separated from the table, because they remain formally married.
+
+a_gesch: Divorced [number] The number of residents divorced on January 1. The marital status separated arises after the dissolution of a marriage through divorce or after the dissolution of a registered partnership other than the death of the partner. Persons who are separated from the table and bed are counted as married people.
+
+**Ethnic [@CBS_2018]**
+
+a_w_all: Western total [number] People of ethnic minority originate from one of the countries in the continents of Europe (excluding Turkey), North America and Oceania or Indonesia or Japan. On the basis of their socio-economic and socio-cultural position, immigrants from Indonesia and Japan are counted as western immigrants. This mainly concerns people who were born in the former Dutch East Indies and employees of Japanese companies with their families.
+ 
+all_nw: Non-Western Ethnic minority with an origin grouping of one of the countries in the continents Africa, Latin America and Asia (excluding Indonesia and Japan) or Turkey. On the basis of their socio-economic and socio-cultural position, immigrants from Indonesia and Japan are counted as western immigrants. This mainly concerns people who were born in the former Dutch East Indies and employees of Japanese companies with their families. 
+
+**Households [@CBS_2018]**
+
+a_1p_hh: Single-person households [number] A private household consisting of one person.
+
+_hh_z_k: Households without children [percentage] Multi-person households without children consist of unmarried couples without children, couples without children and other households. This is an adjustment from the CBS data, where only the absolute number is provided.
+
+p_hh_m_k: Households with children [percentage] Multi-person households with children consist of unmarried couples with children, married couples with children and single-parent households. This is an adjustment from the CBS data, where only the absolute number is provided.
+
+p_1gezw: Percentage of single-family dwelling [%] Reference date: January 1 of the relevant year. The number of single-family homes is stated as a percentage of the total housing stock and is only stated for at least 20 homes. Single-family home: Any home that also forms an entire property. This includes detached houses, adjoining houses, such as two whole houses built under one roof, farms with houses and furthermore all row houses. 
+
+p_mgezw: Percentage of multi-family dwelling [%] Reference date: January 1 of the relevant year. The number of multi-family homes is stated as a percentage of the total housing stock and is only stated for at least 20 homes. Multi-family home: Any home that, together with other living spaces or business premises, forms a whole building. This includes flats, gallery, porch, lower and upper dwellings, apartments and
+
+**p_koopw: **non-rental houses [%] Homes that are owned by the (future) resident (s) or are used as a second home.
+
+# Appendix II: List of respondents 
+
+\begin{table}[]
+\begin{tabular}{lllllll}
+\hline
+Respondent & City        & Neighborhood & Gender               & Age   & Home-owner & PV  \\
+\hline
+1          & Rotterdam   & A            & Male                 & 40-50 & Yes        & Yes \\
+2          & Rotterdam   & A            & Male                 & 50-60 & Yes        & No  \\
+3          & Rotterdam   & A            & Male                 & 60-70 & No         & No  \\
+4          & Rotterdam   & B            & Male                 & 50-60 & Yes        & Yes \\
+5          & Rotterdam   & B            & Male                 & 30-40 & Yes        & No  \\
+6          & Rotterdam   & B            & Male                 & 60-70 & Yes        & No  \\
+7          & Rotterdam   & B            & Male                 & 50-60 & Yes        & Yes \\
+8          & Rotterdam   & C            & Female               & 60-70 & Yes        & No  \\
+9          & Rotterdam   & D            & Male/Female (2 pers) & 30-40 & No         & No  \\
+10         & Bodegraven  & A            & Male                 & 30-40 & Yes        & No  \\
+11         & Bodegraven  & A            & Female               & 50-60 & Yes        & Yes \\
+12         & Schoonhoven & A            & male                 & 30-40 & Yes        & No  \\
+13         & Rotterdam   & A            & male                 & 60-70 & Yes        & No \\
+\hline
+\end{tabular}
+\end{table}
