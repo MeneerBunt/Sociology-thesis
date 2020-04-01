@@ -13,18 +13,20 @@ author:
 
 affiliation:
   - id            : "1"
-    institution   : "Erasmus school of social and behavioural sciences"
+    institution   : "Erasmus school of social and behavioral sciences"
   - id            : "2"
     institution   : "Stedin netbeheer"
 
 
-authornote: |
-  This article is the graduation thesis om Marco Bunt for the study social science on the Erasmus school of social and behavioral sciences, in collaboration with Stedin.
-abstract: |
-  Yet to be written
+authornote:
+  This article is the graduation thesis of Marco Bunt in the Department of public administration and sociology at the Erasmus school of social and behavioral sciences, in collaboration with Stedin.
+
+abstract:
+  In the effort of the Dutch government to transition houses to sustainable (decentralized) ways of energy, everyone is expected to participate. In order to make the energy-transition inclusive for all societal groups, this thesis investigates imaginaries of people that are not participating in the adaptation of solar panels (PV). Although non-adopters are typically perceived as uneducated and reluctant to change, they can have real reasons for not adopting (Rogers, 1983). By examining the sociotechnical energy imaginaries and the sociotechnical imaginaries of the people in this group, this thesis seeks to understand why some people are not adopting sustainable technologies. The examination of the imaginaries is done via a process of interviewing non-adaptors and analyzing the transcripts. In this thesis, it is argued that adopting PV is not only a matter of having the material resources to purchase the technological equipment, but that it is also a matter of having the conviction that sustainable energy is a necessity for the future. Although there is research focused on people that are adopting, not a lot is understood about the motivations of people who are not transitioning their houses to sustainable energy. This thesis seeks to fill that gap. The literature for (Levy and Spices, 2013) is applied as a basis for sociotechnical energy imaginaries, e.g., climate apocalypse imaginary of fossil fuels forever.  This thesis consists of two parts. The first part is a quantitative analysis of factors predicting adaptation of PV via an analysis of the geographical locations of PV on the part of the Dutch energy grid. From the data, peer-influence appeared to be the most useful prediction for the adoption of PV and is used to identify the non-users of PV. The second part is a qualitative part, were semi-structured interviews are conducted to gain insight in reasoning for non-adapting and the role of imaginaries in the decision-making process. People who lived in houses that were exposed to PV by their surrounding neighbors but ho nevertheless adopted PV were approached for the interviews. Via this process, three imaginaries of non-adaptors are identified: 1) collective action imaginary. Respondents that expressed this imaginary, described that action to improve the climate was a necessity but expected the government to arrange a collective effort via (very clear) subsidies or regulations. 2) Systemic change imaginary. Respondents made statements like _"climate change is done by big companies"_. Due to the external cause of climate change, respondents did not take individual action. 3) (Temporary) crisis imaginary. Respondents that hold this imaginary see the climate on earth as resilient and imagine that there is time to wait for fore better solutions before solving the climate issue. Together these imaginaries withheld people from taking measures to prevent human-induced climate change.
   
-keywords          : "future imaginaries, Sustainability, ECO-innovation,  diffusion of innovation,non-adopters"
-wordcount         : "2900"
+  
+keywords          : "Sociotechnical energy imaginaries, ECO-innovation,  diffusion of innovation, non-users"
+wordcount         : "9931"
 
 bibliography      : ["r-references.bib"]
 
@@ -45,7 +47,9 @@ output            : papaja::apa6_pdf # Use papaja::apa6_docx for Word documents 
 
 ```{r setup, include = FALSE}
 source('./funct/Basics.R')
-ipak(c("papaja", "remedy", "kableExtra", "dplyr"))
+
+ipak(c("papaja", "remedy", "kableExtra", "dplyr", "tidyr", "knitr", "kableExtra", "ggplot2"))
+options(knitr.kable.NA = '')
 ```
 
 ```{r analysis-preferences}
@@ -69,8 +73,16 @@ knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 ```{r child = './chpt/Study2.Rmd'}
 ```
 
-```{r child = './chpt/Concl.Rmd'}
+```{r child = './chpt/GereralConclu.Rmd'}
 ```
+
+```{r child = './chpt/GereralDiscus.Rmd'}
+```
+
+
+```{r child = './chpt/Appendix_1.Rmd'}
+```
+
 
 \newpage
 
@@ -80,9 +92,14 @@ r_refs(file = "r-references.bib")
 
 ```
 
+
 \begingroup
 \setlength{\parindent}{-0.5in}
 \setlength{\leftskip}{0.5in}
 
 <div id = "refs"></div>
 \endgroup
+
+```{r child = './chpt/ETHICAL.Rmd'}
+```
+
